@@ -1,25 +1,21 @@
 
-
 const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const nextbtn = document.getElementById("next-btn");
 
-async function getquotes() {
-  try {
-    let response = await fetch("https://api.quotable.io/random");
-    let data = await response.json();
-    quote.innerHTML = data.content;
-    author.innerHTML = `— ${data.author}`;
-  } catch (error) {
-    quote.innerHTML = "Oops! Something went wrong.";
-    author.innerHTML = "";
-    console.error(error);
-  }
+async function getquotes(params) {
+  let response = await fetch("https://quotes-api-self.vercel.app/quote");
+
+  let data = await response.json();
+  quote.innerHTML = data.quote;
+  author.innerHTML = data.author;
 }
+
 
 getquotes();
 
 nextbtn.addEventListener("click", getquotes);
+
 
 
 
