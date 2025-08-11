@@ -14,7 +14,7 @@ async function getquotes(params) {
 
 getquotes();
 
-nextbtn.addEventListener("click", getquotes);
+
 
 
 
