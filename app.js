@@ -12,7 +12,7 @@ async function getquotes(params) {
 }
 
 
-getquotes();
+
 
 
 
